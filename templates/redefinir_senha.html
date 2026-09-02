@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sustenta+ - Redefinir Senha</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/redefinir_senha.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/responsivo.css') }}">
+</head>
+
+<body>
+
+    <div class="redefinir-container">
+
+        <div class="redefinir-card">
+
+            <div class="redefinir-icon">
+                🔐
+            </div>
+
+            <h1>Redefinir senha</h1>
+
+            <p class="redefinir-descricao">
+                Digite sua nova senha e confirme para concluir
+                a alteração.
+            </p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    <div class="flash-messages">
+
+                        {% for category, message in messages %}
+
+                            <div class="flash {{ category }}">
+                                {{ message }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+            {% endwith %}
+
+            <form method="POST" class="redefinir-form">
+
+                {% if form %}
+                    {{ form.hidden_tag() }}
+                {% endif %}
+
+                <label for="senha">
+                    Nova senha
+                </label>
+
+                <div class="input-group">
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite sua nova senha"
+                        required
+                        autocomplete="new-password"
+                    >
+
+                </div>
+
+                <label for="confirmar_senha">
+                    Confirmar nova senha
+                </label>
+
+                <div class="input-group">
+
+                    <input
+                        type="password"
+                        id="confirmar_senha"
+                        name="confirmar_senha"
+                        placeholder="Digite novamente sua nova senha"
+                        required
+                        autocomplete="new-password"
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn-redefinir"
+                >
+                    Alterar senha
+                </button>
+
+            </form>
+
+            <div class="links">
+
+                <a href="{{ url_for('main.loguin') }}">
+                    ← Voltar para o login
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+

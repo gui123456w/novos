@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/loguin.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/responsivo.css') }}">
+</head>
+
+<body>
+
+    <section class="conteinerLogin">
+        <div class="card">
+            <div class="Titulo">
+                <h1>Bem-vindo!</h1>
+            </div>
+
+            <div class="subtitulo">
+                <h5>Acesse sua conta para continuar.</h5>
+            </div>
+
+            {% with mensagens = get_flashed_messages() %}
+                {% if mensagens %}
+                    {% for mensagem in mensagens %}
+                        <p style="color:#b00020; font-weight:bold;">{{ mensagem }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('main.loguin') }}">
+
+                <h5>E-mail:</h5>
+                <input type="email" name="email" placeholder="Digite seu email..." required>
+                <h5>Senha:</h5>
+                <input type="password" name="senha" placeholder="Digite sua senha..." required>
+
+                <button type="submit" class="logar">Logar</button>
+
+            </form>
+
+            <h5>Não possui conta? Clique <a href="{{ url_for('main.cadastro') }}">Aqui</a> para fazer sua
+                conta!</h5>
+            <h5>
+                <a href="{{ url_for('main.recuperar_senha') }}">Deseja trocar senha</a>
+            </h5>
+        </div>
+    </section>
+
+</body>
+
+</html>

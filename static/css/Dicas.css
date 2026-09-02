@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background:#f9fbea;
+}
+
+ 
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+}
+ 
+.menu-links a{
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5rem;
+    font-size: 30px;
+    color: #2f6b3f;
+
+}
+
+.titulo-principal {
+    padding: 1px;
+    text-align: center;
+    color: #2f6b3f;
+    font-size: 3.5rem
+}
+ 
+.cards-container {
+    padding: 30px;
+    display: flex;
+    gap: 90px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+ 
+.card {
+    width: 565px;
+    font-size: 25px;
+}
+ 
+.caixa {
+    color: #3f8652;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    border: solid #85ae6e;
+    padding: 20px;
+    cursor: pointer;
+    background: #e9edc9;
+}
+ 
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+ 
+ 
+.conteudo {
+    display: none;
+    margin-top: 15px;
+}
+ 
+.conteudo.ativo {
+    display: block;
+}
+ 
+p,ul,ol,strong{
+    font-size: 25px;
+}

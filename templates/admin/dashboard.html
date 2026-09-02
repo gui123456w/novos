@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard Admin - Sustenta+</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/admin.css') }}"
+    >
+
+</head>
+
+<body>
+    <div class="admin-layout">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+            <div class="sidebar-topo">
+                <h1 class="logo">Sustenta+</h1>
+                <p class="admin-label">Painel Administrativo</p>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a
+                    href="{{ url_for('main.admin_dashboard') }}"
+                    class="ativo"
+                >
+                    Dashboard
+                </a>
+            
+                <a href="{{ url_for('main.admin_usuarios') }}">
+                    Usuários
+                </a>
+            
+                <a href="{{ url_for('main.admin_pontos_coleta') }}">
+                    Pontos de Coleta
+                </a>
+            
+                <a href="{{ url_for('main.admin_materiais') }}">
+                    Materiais
+                </a>
+            
+                <a href="{{ url_for('main.pi') }}">
+                    Ver site
+                </a>
+            
+                <a
+                    href="{{ url_for('main.logout') }}"
+                    class="sair"
+                >
+                    Sair
+                </a>
+            
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="admin-main">
+
+            <header class="admin-header">
+                <div>
+                    <h2>Dashboard</h2>
+                    <p>
+                        Bem-vindo ao painel administrativo do Sustenta+.
+                    </p>
+                </div>
+
+                <div class="admin-usuario">
+                    <span>Olá,</span>
+                    <strong>
+                        {{ session.get('usuarios_nome', 'Administrador') }}
+                    </strong>
+                </div>
+            </header>
+
+            {% with mensagens = get_flashed_messages() %}
+                {% if mensagens %}
+                    {% for mensagem in mensagens %}
+                        <p>{{ mensagem }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- CARDS -->
+            <section class="dashboard-cards">
+
+                <div class="dashboard-card">
+                    <div class="card-info">
+                        <span class="card-titulo">
+                            Usuários cadastrados
+                        </span>
+
+                        <strong class="card-numero">
+                            {{ total_usuarios | default(0) }}
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-info">
+                        <span class="card-titulo">
+                            Pontos de coleta
+                        </span>
+
+                        <strong class="card-numero">
+                            {{ total_locais | default(0) }}
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-info">
+                        <span class="card-titulo">
+                            Tipos de materiais
+                        </span>
+
+                        <strong class="card-numero">
+                            {{ total_materiais | default(0) }}
+                        </strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- AÇÕES RÁPIDAS -->
+            <section class="admin-section">
+
+                <div class="section-header">
+                    <h3>Ações rápidas</h3>
+                </div>
+
+                <div class="acoes-grid">
+
+                    <a href="{{ url_for('main.admin_usuarios') }}" class="acao-card">
+                        <h4>Gerenciar usuários</h4>
+                        <p>
+                            Visualize e administre os usuários cadastrados.
+                        </p>
+                    </a>
+
+                    <a href="{{ url_for('main.admin_pontos_coleta') }}" class="acao-card">
+                        <h4>Gerenciar pontos de coleta</h4>
+                        <p>
+                            Cadastre, edite ou remova pontos de coleta.
+                        </p>
+                    </a>
+
+                    <a href="{{ url_for('main.admin_materiais') }}" class="acao-card">
+                        <h4>Gerenciar materiais</h4>
+                        <p>
+                            Administre os tipos de materiais recicláveis.
+                        </p>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- VISÃO GERAL -->
+            <section class="admin-section">
+
+                <div class="section-header">
+                    <h3>Visão geral</h3>
+                </div>
+
+                <div class="info-box">
+                    <p>
+                        O painel administrativo permite controlar
+                        as principais informações do Sustenta+.
+                    </p>
+
+                    <p>
+                        As próximas etapas podem incluir cadastro,
+                        edição e exclusão de usuários, pontos de coleta
+                        e tipos de materiais.
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+.parte1{
+    margin: 0;
+    background-color: #f9fbea;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    font-size: 1.4rem;
+    width: 300px;
+    margin: 4%;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+}
+
+.card img {
+    padding: 20px;
+    width: 200px;
+    margin: 1rem 0;
+}
+
+.card-green{
+    color: #167544;
+    border: solid #167544;
+}
+
+.card-blue{
+    color: #145da0;
+    border: solid #145da0
+}
+
+.card-red{
+    color:#b83232 ;
+    border: solid #b83232
+}
+
+.card-brown{
+    color: #493232;
+    border: solid #493232
+}
+
+.card-orange{
+    color:#ff8210 ;
+    border: solid #ff8210
+}
+
+.card-white{
+    color: #c1cbd0;
+    border: solid #c1cbd0
+}
+
+.card-purple{
+    color: #8c52ff;
+    border: solid #8c52ff
+}
+
+.card-grey{
+    color: #c1cbd0;
+    border: solid #c1cbd0
+}
+
+.card-green { background: #7cc36b; }
+.card-blue { background: #7fa8d8; }
+.card-red { background: #e57373; }
+.card-brown { background: #a67c52; }
+.card-orange{background: #fbb355;}
+.card-white{background:#fbf6f2 ;}
+.card-purple{background: #d6c1ff;}
+.card-grey{background: #9b9e9f; }
+
+/* VIDRO */
+.modal-box.vidro {
+    background: #7cc36b;
+    color:#167544 ;
+}
+.modal-box.vidro .modal-header {
+    background: #7cc36b;
+}
+
+/* PAPEL */
+.modal-box.papel {
+    background: #7fa8d8;
+    color: #145da0;
+}
+.modal-box.papel .modal-header {
+    background: #7fa8d8;
+}
+
+/* PLÁSTICO */
+.modal-box.plastico {
+    background: #e57373;
+    color: #b83232;
+}
+.modal-box.plastico .modal-header {
+    background: #e57373;
+}
+
+/* ORGÂNICO */
+.modal-box.organico {
+    background: #a67c52;
+    color: #493232;
+}
+.modal-box.organico .modal-header {
+    background: #a67c52;
+}
+
+/* CONTAMINADO */
+.modal-box.metal {
+    background: #f7bd71;
+    color:#ff8210 ;
+}
+.modal-box.metal .modal-header {
+    background: #fbc986;
+}
+
+/* SAUDE */
+.modal-box.saude {
+    background: #fbf6f2;
+    color:#b6bbbe; 
+}
+.modal-box.saude .modal-header {
+    background: #fbf6f2;
+}
+
+/* RADUATIVO */
+.modal-box.radioativo {
+    background: #d6c1ff;
+    color:#8c52ff ;
+}
+.modal-box.radioativo .modal-header {
+    background: #d6c1ff;
+}
+
+/* MISTRADO */
+.modal-box.misturado {
+    background: #9b9e9f;
+    color:#d3d9dc ;
+}
+.modal-box.misturado .modal-header {
+    background: #9b9e9f;
+}

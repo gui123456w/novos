@@ -1,0 +1,46 @@
+.btn-card {
+    margin: 10px;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.btn-card:hover{
+    transform: scale(1.2);
+}
+
+ 
+.card-green .btn-card {
+    background-color: #167544;
+}
+ 
+.card-blue .btn-card {
+    background-color: #145da0;
+}
+ 
+.card-red .btn-card {
+    background-color: #b83232;
+}
+ 
+.card-brown .btn-card {
+    background-color: #493232;
+}
+ 
+.card-orange .btn-card {
+    background-color: #ff8210;
+}
+ 
+.card-white .btn-card {
+    background-color: #c1cbd0;
+}
+ 
+.card-purple .btn-card {
+    background-color: #8c52ff;
+}
+ 
+.card-grey .btn-card {
+    background-color: #c1cbd0;
+}

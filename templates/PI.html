@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Sustenta+</title>
+    
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='css/pi.css') }}">
+    
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='css/card.css') }}">
+    
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='css/hero.css') }}">
+    
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='css/button.css') }}">
+    
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='css/responsivo.css') }}">
+    </head>
+
+<body>
+    <!-- HERO -->
+    <section class="hero">
+
+        <nav class="menu">
+    
+            <!-- Botão hambúrguer - aparece somente no celular -->
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menuLinks"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    
+            <div class="menu-links" id="menuLinks">
+    
+                <a href="{{ url_for('main.pi') }}">
+                    Início
+                </a>
+    
+                <a href="{{ url_for('main.dicas') }}">
+                    Dicas Sustentáveis
+                </a>
+    
+                <a href="{{ url_for('main.coleta') }}">
+                    Pontos de Coletas
+                </a>
+    
+                <a href="{{ url_for('main.loguin') }}">
+                    Login
+                </a>
+    
+            </div>
+    
+        </nav>
+    
+    
+        <div class="container hero-content">
+    
+            <div class="hero-text">
+    
+                <h1 class="title">
+                    Sustenta+
+                </h1>
+    
+                <h3 class="subtitle">
+                    Transformando resíduos em novas oportunidades
+                    para um futuro sustentável!
+                </h3>
+    
+            </div>
+    
+    
+            <div class="hero-img">
+    
+                <img
+                    src="{{ url_for('static', filename='img/Reciclavel (1).png') }}"
+                    alt="Reciclável"
+                >
+    
+            </div>
+    
+        </div>
+    
+    </section>
+
+    <div class="parte1">
+        <!-- CARDS -->
+        <section class="section">
+            <div class="container cards">
+
+                <div class="card card-green">
+                        <h3>Vidro</h3>
+                        <img src="{{ url_for('static', filename='img/LixoVerde.png') }}" alt="Vidro">
+
+                    <button class="btn-card" data-tipo="vidro" onclick="montarConteudo()">Saiba Mais</button>
+
+                </div>
+
+                <div class="card card-blue">
+                    <h3>Papel e papelão</h3>
+                    <img src="{{ url_for('static', filename='img/LixoAzul.png') }}" alt="Papel e papelão">
+
+                    <button class="btn-card" data-tipo="papel">Saiba Mais</button>
+
+                </div>
+
+                <div class="card card-red">
+                    <h3>Plastico e isopor</h3>
+                    <img src="{{ url_for('static', filename='img/LixoVermelho.png') }}" alt="Plástico e isopor">
+
+                    <button class="btn-card" data-tipo="plastico">Saiba Mais</button>
+
+                </div>
+
+                <div class="card card-brown">
+                    <h3>Organico</h3>
+                    <img src="{{ url_for('static', filename='img/LixoMarrom.png') }}" alt="Orgânico">
+
+                    <button class="btn-card" data-tipo="organico">Saiba Mais</button>
+
+                </div>
+
+                <div class="card card-orange">
+                    <h3>Metal</h3>
+                    <img src="{{ url_for('static', filename='img/LixoLaranja.png') }}" alt="Metal">
+
+                    <button class="btn-card" data-tipo="metal">Saiba Mais</button>
+
+                </div>
+
+                <div class="card card-white">
+                    <h3>Saude</h3>
+                    <img src="{{ url_for('static', filename='img/LixoBranco.png') }}" alt="Saúde">
+
+                    <button class="btn-card" data-tipo="saude">Saiba Mais</button>
+
+                </div>
+
+                <div class="card card-purple">
+                    <h3>Radioativo</h3>
+                    <img src="{{ url_for('static', filename='img/LixoRoxo.png') }}" alt="Radioativo">
+
+                    <button class="btn-card" data-tipo="radioativo">Saiba Mais</button>
+
+                </div>
+
+                <div class="card card-grey">
+                    <h3>Misturado</h3>
+                    <img src="{{ url_for('static', filename='img/LixoCinza.png') }}" alt="Misturado">
+
+                    <button class="btn-card" data-tipo="misturado">Saiba Mais</button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MODAL DO JS -->
+        <div id="modal" class="modal">
+            <div class="modal-overlay"></div>
+
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h2 id="modalTitle"></h2>
+                    <span id="closeModal">&times;</span>
+                </div>
+
+                <div class="modal-body" id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/PI.js') }}"></script>
+</body>
+
+</html>

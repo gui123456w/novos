@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: sustenta-plus
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python criar_banco.py && gunicorn app:app
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sustenta-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+
+databases:
+  - name: sustenta-db
+    plan: free
+    databaseName: sustenta
+    user: sustenta

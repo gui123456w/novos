@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pontos de Coleta - Green Living</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/pi.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/Coleta.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/responsivo.css') }}">
+</head>
+
+<body>
+
+    <!-- =========================================
+         MENU
+         ========================================= -->
+    <nav class="menu">
+
+        <!-- Botão hambúrguer - aparece no celular -->
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="menuLinks"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Links -->
+        <div class="menu-links" id="menuLinks">
+
+            <a href="{{ url_for('main.pi') }}">
+                Início
+            </a>
+
+            <a href="{{ url_for('main.dicas') }}">
+                Dicas Sustentáveis
+            </a>
+
+            <a href="{{ url_for('main.coleta') }}">
+                Pontos de Coletas
+            </a>
+
+            <a href="{{ url_for('main.loguin') }}">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================
+         HERO / FORMULÁRIO
+         ========================================= -->
+    <section class="hero-custom">
+
+        <div class="hero-body">
+
+            <h1 class="titulo-principal">
+                Pontos de Coleta
+            </h1>
+
+            <div class="container">
+
+                <div class="texto">
+
+                    <form
+                        id="form-busca"
+                        class="formulario-busca"
+                    >
+
+                        <!-- Tipo de resíduo -->
+                        <div class="campo-busca">
+
+                            <label for="material">
+                                Tipo de resíduo:
+                            </label>
+
+                            <select
+                                id="material"
+                                name="material"
+                            >
+
+                                <option
+                                    value=""
+                                    disabled
+                                    selected
+                                >
+                                    Selecione o tipo de resíduo...
+                                </option>
+
+                                <option value="entulho">
+                                    Entulho
+                                </option>
+
+                                <option value="moveis">
+                                    Móveis
+                                </option>
+
+                                <option value="poda de arvore">
+                                    Poda de árvore
+                                </option>
+
+                                <option value="eletrodomesticos">
+                                    Eletrodomésticos
+                                </option>
+
+                                <option value="vidro">
+                                    Vidro
+                                </option>
+
+                                <option value="papel">
+                                    Papel
+                                </option>
+
+                                <option value="plastico">
+                                    Plástico
+                                </option>
+
+                                <option value="tampinhas">
+                                    Tampinhas
+                                </option>
+
+                                <option value="metal">
+                                    Metal
+                                </option>
+
+                                <option value="pilhas">
+                                    Pilhas
+                                </option>
+
+                                <option value="baterias">
+                                    Baterias
+                                </option>
+
+                                <option value="lampadas fluorescentes">
+                                    Lâmpadas fluorescentes
+                                </option>
+
+                                <option value="remedio vencido">
+                                    Remédio vencido
+                                </option>
+
+                                <option value="oleo de cozinha">
+                                    Óleo de cozinha
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Localização -->
+                        <div class="campo-busca">
+
+                            <label for="localizacao">
+                                Sua localização:
+                            </label>
+
+                            <input
+                                type="text"
+                                id="localizacao"
+                                name="localizacao"
+                                placeholder="Ex: Cidade ou CEP..."
+                            >
+
+                        </div>
+
+
+                        <!-- Botão buscar -->
+                        <button
+                            type="submit"
+                            id="btn-buscar"
+                            class="btn-buscar"
+                        >
+                            Buscar
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         MAPA
+         ========================================= -->
+    <section class="mapa-container">
+
+        <h2 class="titulo">
+            Pontos Próximos de Você
+        </h2>
+
+        <div
+            id="info-endereco"
+            style="
+                margin-bottom: 15px;
+                font-weight: bold;
+                text-align: center;
+            "
+        >
+        </div>
+
+        <iframe
+            id="iframe-mapa"
+            src="https://maps.google.com/maps?q=coleta%20seletiva&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="450"
+            style="border: 0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+
+    </section>
+
+
+    <!-- =========================================
+         JAVASCRIPT DO MENU RESPONSIVO
+         ========================================= -->
+    <script>
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const menuLinks =
+            document.getElementById("menuLinks");
+
+
+        if (menuToggle && menuLinks) {
+
+            // Abrir / fechar menu
+            menuToggle.addEventListener("click", function () {
+
+                const menuAberto =
+                    menuLinks.classList.toggle("ativo");
+
+                menuToggle.classList.toggle("ativo");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    menuAberto
+                );
+
+            });
+
+
+            // Fechar menu depois de clicar em um link
+            document
+                .querySelectorAll(".menu-links a")
+                .forEach(function (link) {
+
+                    link.addEventListener("click", function () {
+
+                        menuLinks.classList.remove("ativo");
+
+                        menuToggle.classList.remove("ativo");
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    });
+
+                });
+
+        }
+
+    </script>
+
+
+    <!-- =========================================
+         JAVASCRIPT DA BUSCA
+         ========================================= -->
+    <script>
+
+        document
+            .getElementById('form-busca')
+            .addEventListener('submit', async function (event) {
+
+                // Impede o formulário de recarregar a página
+                event.preventDefault();
+
+
+                const localizacaoInput =
+                    document
+                        .getElementById('localizacao')
+                        .value
+                        .trim();
+
+
+                const materialSelect =
+                    document
+                        .getElementById('material')
+                        .value;
+
+
+                const iframeMapa =
+                    document.getElementById('iframe-mapa');
+
+
+                const infoEndereco =
+                    document.getElementById('info-endereco');
+
+
+                const botaoBuscar =
+                    document.getElementById('btn-buscar');
+
+
+                /* =========================
+                   VALIDAÇÕES
+                   ========================= */
+
+                if (!localizacaoInput) {
+
+                    alert(
+                        'Por favor, informe um CEP ou Cidade.'
+                    );
+
+                    return;
+                }
+
+
+                if (!materialSelect) {
+
+                    alert(
+                        'Por favor, selecione o tipo de resíduo.'
+                    );
+
+                    return;
+                }
+
+
+                botaoBuscar.innerText = 'Buscando...';
+                botaoBuscar.disabled = true;
+
+
+                const cepLimpo =
+                    localizacaoInput.replace(/\D/g, '');
+
+
+                let queryBusca = '';
+
+
+                /* =========================
+                   USUÁRIO DIGITOU UM CEP
+                   ========================= */
+
+                if (cepLimpo.length === 8) {
+
+                    infoEndereco.innerText =
+                        'Buscando endereço pelo CEP...';
+
+
+                    try {
+
+                        // Consulta ViaCEP
+                        const response = await fetch(
+                            `https://viacep.com.br/ws/${cepLimpo}/json/`
+                        );
+
+
+                        if (!response.ok) {
+
+                            throw new Error(
+                                'Erro na resposta da API ViaCEP.'
+                            );
+
+                        }
+
+
+                        const data =
+                            await response.json();
+
+
+                        console.log(
+                            'Resposta ViaCEP:',
+                            data
+                        );
+
+
+                        /* CEP não encontrado */
+                        if (data.erro) {
+
+                            infoEndereco.innerText =
+                                'CEP não encontrado. Tentando localizar diretamente no mapa...';
+
+
+                            queryBusca =
+                                `ponto de coleta ${materialSelect} ${localizacaoInput}`;
+
+                        }
+
+                        /* CEP encontrado */
+                        else {
+
+                            const enderecoFormatado =
+                                `${data.logradouro ? data.logradouro + ', ' : ''}` +
+                                `${data.bairro ? data.bairro + ', ' : ''}` +
+                                `${data.localidade} - ${data.uf}`;
+
+
+                            infoEndereco.innerText =
+                                `Localização encontrada: ${enderecoFormatado}`;
+
+
+                            queryBusca =
+                                `ponto de coleta ${materialSelect} ` +
+                                `${data.logradouro || ''} ` +
+                                `${data.bairro || ''} ` +
+                                `${data.localidade} ` +
+                                `${data.uf}`;
+
+
+                            console.log(
+                                'Busca no Google Maps:',
+                                queryBusca
+                            );
+
+                        }
+
+                    }
+
+                    catch (error) {
+
+                        console.error(
+                            'Erro ao buscar CEP:',
+                            error
+                        );
+
+
+                        infoEndereco.innerText =
+                            'Não foi possível consultar o CEP. Buscando diretamente no mapa...';
+
+
+                        queryBusca =
+                            `ponto de coleta ${materialSelect} ${localizacaoInput}`;
+
+                    }
+
+                }
+
+
+                /* =========================
+                   USUÁRIO DIGITOU UMA CIDADE
+                   ========================= */
+
+                else {
+
+                    infoEndereco.innerText =
+                        `Buscando pontos de coleta para: ${localizacaoInput}`;
+
+
+                    queryBusca =
+                        `ponto de coleta ${materialSelect} ${localizacaoInput}`;
+
+                }
+
+
+                /* =========================
+                   ATUALIZA O GOOGLE MAPS
+                   ========================= */
+
+                console.log(
+                    'Pesquisa final:',
+                    queryBusca
+                );
+
+
+                const urlMapa =
+                    `https://maps.google.com/maps?q=${encodeURIComponent(queryBusca)}` +
+                    `&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+
+
+                iframeMapa.src = urlMapa;
+
+
+                // Restaura o botão
+                botaoBuscar.innerText = 'Buscar';
+                botaoBuscar.disabled = false;
+
+            });
+
+    </script>
+
+</body>
+
+</html>

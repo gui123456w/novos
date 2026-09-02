@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: #e9edc9;
+}
+
+/* cores principal */
+/*card-green #7cc36b; 
+card-blue #7fa8d8; 
+card-red #e57373; 
+card-brown  #a67c52;*/
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.btn-green {
+    background: #7cc36b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+}
+
+.modal-box {
+    position: relative;
+    max-width: 700px;
+    margin: 5% auto;
+    border-radius: 15px;
+    overflow: hidden;
+    color: white;
+}
+
+.modal-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    background: white;
+    color: #333;
+}
+
+#closeModal {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+

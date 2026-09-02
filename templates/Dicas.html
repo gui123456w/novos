@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dicas Sustentáveis - Green Living</title>
+
+
+    <!-- CSS PRINCIPAL -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/pi.css') }}"
+    >
+
+
+    <!-- CSS DA PÁGINA DICAS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/Dicas.css') }}"
+    >
+
+
+    <!-- RESPONSIVO - DEIXAR POR ÚLTIMO -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/responsivo.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MENU
+         ===================================================== -->
+
+    <nav class="menu">
+
+
+        <!-- BOTÃO HAMBÚRGUER -->
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="menuLinks"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- LINKS -->
+        <div
+            class="menu-links"
+            id="menuLinks"
+        >
+
+            <a href="{{ url_for('main.pi') }}">
+                Início
+            </a>
+
+
+            <a href="{{ url_for('main.dicas') }}">
+                Dicas Sustentáveis
+            </a>
+
+
+            <a href="{{ url_for('main.coleta') }}">
+                Pontos de Coletas
+            </a>
+
+
+            <a href="{{ url_for('main.loguin') }}">
+                Login
+            </a>
+
+        </div>
+
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         DICAS SUSTENTÁVEIS
+         ===================================================== -->
+
+    <section class="hero-custom">
+
+
+        <div class="hero-body">
+
+
+            <h1 class="titulo-principal">
+                Dicas Sustentáveis
+            </h1>
+
+
+
+            <div class="cards-container">
+
+
+                <!-- =================================================
+                     COMPOSTAGEM
+                     ================================================= -->
+
+                <div class="card">
+
+
+                    <div
+                        class="caixa"
+                        onclick="abrirConteudo('compostagem')"
+                    >
+
+
+                        <h3 class="card-titulo">
+                            Compostagem
+                        </h3>
+
+
+                        <div
+                            id="compostagem"
+                            class="conteudo"
+                        >
+
+
+                            <img
+                                src="{{ url_for('static', filename='img/compostagem.png') }}"
+                                alt="Compostagem"
+                            >
+
+
+                            <h3>
+                                <strong>
+                                    O que é Compostagem?
+                                </strong>
+                            </h3>
+
+
+                            <p>
+
+                                A compostagem é o processo natural de
+                                decomposição de resíduos orgânicos
+                                (cascas de frutas, vegetais, folhas e
+                                restos de comida) em adubo rico chamado
+                                composto.
+
+                                Transforma lixo em fertilizantes para
+                                plantas, reduzindo desperdício, emissões
+                                de metano em aterros e melhorando o solo
+                                de forma sustentável, ideal para hortas
+                                urbanas!
+
+                            </p>
+
+
+                            <hr>
+
+
+                            <h3>
+
+                                <strong>
+                                    Como fazer uma Composteira Caseira
+                                </strong>
+
+                            </h3>
+
+
+                            <strong>
+                                Escolha o local adequado
+                            </strong>
+
+
+                            <p>
+
+                                Escolha um espaço ventilado e externo,
+                                como jardim ou varanda ampla.
+
+                                A boa circulação do ar é essencial para
+                                os micro-organismos acelerarem a
+                                decomposição, evitando odores
+                                indesejados e garantindo eficiência.
+
+                            </p>
+
+
+
+                            <strong>
+                                Escolha o tipo de composteira
+                            </strong>
+
+
+                            <ol>
+
+                                <li>
+                                    Baldes plásticos perfurados
+                                </li>
+
+
+                                <li>
+                                    Caixas de madeira tratada
+                                </li>
+
+
+                                <li>
+
+                                    Composteiros prontos de lojas
+                                    especializadas.
+
+                                    Priorize ventilação com furos
+                                    laterais e no fundo e tamanho
+                                    proporcional ao volume de resíduos.
+
+                                </li>
+
+                            </ol>
+
+
+
+                            <strong>
+                                Organize as Camadas
+                            </strong>
+
+
+                            <p>
+
+                                <strong>
+                                    Verdes (nitrogênio):
+                                </strong>
+
+                                restos de alimentos, cascas de
+                                frutas, legumes e ervas.
+
+                                <br><br>
+
+
+                                <strong>
+                                    Marrons (carbono):
+                                </strong>
+
+                                folhas secas, palha e papel picado
+                                sem tintas.
+
+                                <br><br>
+
+
+                                Proporção ideal: 1 parte verde para
+                                2 ou 3 partes marrons.
+
+                                Inicie com aproximadamente 10 cm
+                                de material marrom no fundo.
+
+                            </p>
+
+
+
+                            <strong>
+                                Manutenção diária
+                            </strong>
+
+
+                            <ol>
+
+
+                                <li>
+
+                                    Adicione corretamente resíduos
+                                    orgânicos frescos como frutas,
+                                    legumes, borra de café e cascas
+                                    de ovo.
+
+                                </li>
+
+
+                                <li>
+
+                                    Evite carne, gorduras, alimentos
+                                    cozidos e laticínios, pois podem
+                                    causar cheiro e atrair pragas.
+
+                                </li>
+
+
+                                <li>
+
+                                    Cubra os resíduos úmidos com folhas
+                                    secas, serragem ou papelão.
+
+                                </li>
+
+
+                                <li>
+
+                                    Monitore o cheiro e a umidade.
+
+                                    O ideal é uma umidade semelhante
+                                    a uma esponja espremida.
+
+                                </li>
+
+
+                                <li>
+
+                                    Para prevenir insetos, mantenha
+                                    os resíduos cobertos e a
+                                    composteira fechada.
+
+                                </li>
+
+
+                            </ol>
+
+
+                            <hr>
+
+
+                            <h3>
+                                Fechar Guia
+                            </h3>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LIMPEZA
+                     ================================================= -->
+
+                <div class="card">
+
+
+                    <div
+                        class="caixa"
+                        onclick="abrirConteudo('limpeza')"
+                    >
+
+
+                        <h3 class="card-titulo">
+                            Limpeza e Preparo
+                        </h3>
+
+
+                        <div
+                            id="limpeza"
+                            class="conteudo"
+                        >
+
+
+                            <img
+                                src="{{ url_for('static', filename='img/limpeza.png') }}"
+                                alt="Limpeza"
+                            >
+
+
+                            <h3>
+
+                                <strong>
+                                    O que é Limpeza para Reciclagem?
+                                </strong>
+
+                            </h3>
+
+
+                            <p>
+
+                                Processo essencial de remoção de
+                                contaminantes orgânicos, como restos
+                                de comida e gorduras, presentes em
+                                materiais como plásticos, metais,
+                                vidros e papéis.
+
+                                A limpeza ajuda a evitar contaminação
+                                dos materiais e facilita o processo
+                                de reciclagem.
+
+                            </p>
+
+
+                            <hr>
+
+
+                            <h3>
+
+                                <strong>
+                                    Dicas de Limpeza
+                                </strong>
+
+                            </h3>
+
+
+                            <ol>
+
+
+                                <li>
+
+                                    Retire restos de alimentos das
+                                    embalagens antes do descarte.
+
+                                </li>
+
+
+                                <li>
+
+                                    Quando necessário, enxágue
+                                    rapidamente potes, garrafas e
+                                    recipientes.
+
+                                </li>
+
+
+                                <li>
+
+                                    Deixe os materiais secarem antes
+                                    de colocá-los junto aos recicláveis.
+
+                                </li>
+
+
+                            </ol>
+
+
+                            <hr>
+
+
+                            <h3>
+
+                                <strong>
+                                    Preparo para reciclagem
+                                </strong>
+
+                            </h3>
+
+
+                            <p>
+
+                                Faça a separação e organização correta
+                                dos resíduos recicláveis antes de
+                                encaminhá-los para a coleta seletiva
+                                ou para um ponto de coleta.
+
+                            </p>
+
+
+                            <hr>
+
+
+                            <h3>
+                                Fechar Guia
+                            </h3>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     REAPROVEITAR
+                     ================================================= -->
+
+                <div class="card">
+
+
+                    <div
+                        class="caixa"
+                        onclick="abrirConteudo('reaproveitar')"
+                    >
+
+
+                        <h3 class="card-titulo">
+                            Reaproveitar Ideias
+                        </h3>
+
+
+                        <div
+                            id="reaproveitar"
+                            class="conteudo"
+                        >
+
+
+                            <img
+                                src="{{ url_for('static', filename='img/reaproveitar.png') }}"
+                                alt="Reaproveitar"
+                            >
+
+
+                            <h3>
+
+                                <strong>
+                                    O que é Reaproveitar Ideias?
+                                </strong>
+
+                            </h3>
+
+
+                            <p>
+
+                                É o uso criativo de materiais que
+                                seriam descartados para criar novos
+                                produtos úteis, decorativos ou
+                                funcionais.
+
+                            </p>
+
+
+                            <hr>
+
+
+                            <h3>
+
+                                <strong>
+                                    Dicas de reaproveitamento
+                                </strong>
+
+                            </h3>
+
+
+                            <p>
+
+                                Garrafas PET podem virar vasos.
+
+                                Caixas podem ser transformadas em
+                                organizadores ou pequenas prateleiras.
+
+                                Potes também podem ser reutilizados
+                                para guardar objetos.
+
+                            </p>
+
+
+                            <hr>
+
+
+                            <h3>
+                                Fechar Guia
+                            </h3>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="{{ url_for('static', filename='js/Dicas.js') }}">
+    </script>
+
+
+</body>
+
+</html>

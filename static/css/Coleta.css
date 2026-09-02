@@ -1,0 +1,113 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: #f9fbea;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.menu-links a{
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5rem;
+    font-size: 30px;
+    color: #2f6b3f;
+
+}
+
+.titulo-principal {
+    padding: 1px;
+    text-align: center;
+    color: #2f6b3f;
+    font-size: 3.5rem
+}
+
+/* --- GRID DO CONTAINER (Organiza lado a lado de forma justa) --- */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Define que cada coluna vai ocupar metade do espaço disponível */
+.texto {
+    flex: 1;
+    min-width: 320px;
+}
+
+
+/* --- PARTE DE PESQUISA (AMPLIADA) --- */
+.formulario-busca {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Mais espaço vertical entre os campos */
+    width: 100%;
+
+}
+
+.campo-busca {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ESTE BLOCO ENGORDA E AMPLIA O CAMPO DE TEXTO */
+.campo-busca input {
+    width: 90%;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    border: 3px solid #85ae6e;
+    border-radius: 10px;
+}
+
+.campo-busca option,
+select {
+    width: 93%;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    border: 3px solid #85ae6e;
+    border-radius: 10px;
+}
+
+/* tamanho mapa */
+.mapa-container {
+    width: 80rem;
+    margin: 40px auto;
+    padding: 20px;
+    align-items: center;
+}
+
+.mapa-container iframe {
+    align-items: center;
+    width: 80rem;
+    height: 40rem;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button{
+    color:#135b2f;
+    background-color: #85ae6e;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 16px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+button:hover{
+    transform: scale(1.2);
+    background-color:#9dbf89;
+}

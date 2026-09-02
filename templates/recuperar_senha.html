@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sustenta+ - Recuperar Senha</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/recuperar_senha.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/responsivo.css') }}">
+</head>
+
+<body>
+
+    <div class="recuperar-container">
+
+        <div class="recuperar-card">
+
+            <div class="recuperar-icon">
+                🔐
+            </div>
+
+            <h1>Recuperar senha</h1>
+
+            <p class="recuperar-descricao">
+                Digite seu e-mail cadastrado para receber as instruções
+                para redefinir sua senha.
+            </p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    <div class="flash-messages">
+
+                        {% for category, message in messages %}
+
+                            <div class="flash {{ category }}">
+                                {{ message }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+            {% endwith %}
+
+            <form method="POST" class="recuperar-form">
+
+                {% if form %}
+                    {{ form.hidden_tag() }}
+                {% endif %}
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <div class="input-group">
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                        autocomplete="email"
+                    >
+
+                </div>
+
+                <button type="submit" class="btn-recuperar">
+                    Enviar link de recuperação
+                </button>
+
+            </form>
+
+            <div class="links">
+
+                <a href="{{ url_for('main.loguin') }}">
+                    ← Voltar para o login
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+

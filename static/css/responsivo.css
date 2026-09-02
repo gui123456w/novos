@@ -1,0 +1,896 @@
+/* =========================================================
+   RESPONSIVO GERAL - SUSTENTA+
+   ========================================================= */
+
+/* Evita elementos estourando a largura da tela */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MENU - DESKTOP
+   ========================================================= */
+
+/* Esconde o botão hambúrguer no computador */
+.menu-toggle {
+    display: none;
+}
+
+
+/* =========================================================
+   TABLETS E TELAS MENORES
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* =========================
+       MENU
+       ========================= */
+
+    .menu {
+        width: 100%;
+    }
+
+    .menu-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+        padding: 15px;
+    }
+
+
+    /* =========================
+       HOME / PI
+       ========================= */
+
+    .hero-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 30px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-img {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+    }
+
+    .hero-img img {
+        max-width: 400px;
+
+        width: 80%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+
+    /* =========================
+       DICAS
+       ========================= */
+
+    .cards-container {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        padding: 0 20px;
+
+        box-sizing: border-box;
+    }
+
+    .hero-body {
+        width: 100%;
+    }
+
+    .conteudo img {
+        max-width: 100%;
+
+        height: auto;
+    }
+
+
+    /* =========================
+       CADASTRO
+       ========================= */
+
+    .conteinerLoguin {
+        width: 90%;
+
+        max-width: 700px;
+
+        margin: auto;
+    }
+
+    .informacoa {
+        width: 100%;
+    }
+
+    .linha {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .campo {
+        width: 100%;
+    }
+
+    .campo input {
+        width: 100%;
+    }
+
+    .termos-aceite {
+        width: 100%;
+    }
+
+
+    /* =========================
+       LOGIN
+       ========================= */
+
+    .conteinerLogin {
+        padding: 20px;
+    }
+
+    .conteinerLogin .card {
+        width: 90%;
+
+        max-width: 500px;
+
+        margin: auto;
+    }
+
+    .conteinerLogin input {
+        width: 100%;
+    }
+
+
+    /* =========================
+       RECUPERAR SENHA
+       ========================= */
+
+    .recuperar-container {
+        padding: 20px;
+    }
+
+    .recuperar-card {
+        width: 90%;
+
+        max-width: 500px;
+    }
+
+    .recuperar-form {
+        width: 100%;
+    }
+
+    .recuperar-form input {
+        width: 100%;
+    }
+
+
+    /* =========================
+       REDEFINIR SENHA
+       ========================= */
+
+    .redefinir-container {
+        padding: 20px;
+    }
+
+    .redefinir-card {
+        width: 90%;
+
+        max-width: 500px;
+    }
+
+    .redefinir-form {
+        width: 100%;
+    }
+
+    .redefinir-form input {
+        width: 100%;
+    }
+
+
+    /* =========================
+       TERMOS DE USO
+       ========================= */
+
+    .termos-container {
+        padding: 20px;
+    }
+
+    .termos-container .card {
+        width: 90%;
+
+        max-width: 750px;
+
+        margin: auto;
+    }
+
+
+    /* =========================
+       COLETA
+       ========================= */
+
+    .formulario-busca {
+        width: 100%;
+    }
+
+    .campo-busca {
+        width: 100%;
+    }
+
+    .campo-busca input,
+    .campo-busca select {
+        width: 100%;
+    }
+
+    .mapa-container {
+        width: 95%;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #iframe-mapa {
+        width: 100%;
+
+        height: 400px;
+    }
+
+
+    /* =========================
+       MODAL
+       ========================= */
+
+    .modal-box {
+        width: 90%;
+
+        max-height: 85vh;
+
+        overflow-y: auto;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* =====================================================
+       MENU MOBILE / HAMBÚRGUER
+       ===================================================== */
+
+    .menu {
+        width: 100%;
+
+        position: relative;
+
+        z-index: 1000;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       BOTÃO HAMBÚRGUER
+       ========================= */
+
+    .menu-toggle {
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        width: 46px;
+
+        height: 46px;
+
+        margin-left: auto;
+
+        margin-right: 15px;
+
+        background-color: #1f6b45;
+
+        border: 2px solid #ffffff;
+
+        border-radius: 10px;
+
+        cursor: pointer;
+
+        gap: 5px;
+
+        position: relative;
+
+        z-index: 1001;
+
+        padding: 0;
+    }
+
+
+    /* Barrinhas do hambúrguer */
+    .menu-toggle span {
+        display: block;
+
+        width: 26px;
+
+        height: 3px;
+
+        background-color: #ffffff;
+
+        border-radius: 10px;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+
+    /* =========================
+       MENU FECHADO
+       ========================= */
+
+    .menu-links {
+        display: none;
+
+        flex-direction: column;
+
+        justify-content: flex-start;
+
+        align-items: stretch;
+
+        width: calc(100% - 30px);
+
+        margin: 10px 15px 0;
+
+        padding: 10px;
+
+        gap: 6px;
+
+        background-color: #1f6b45;
+
+        border-radius: 12px;
+
+        box-sizing: border-box;
+
+        box-shadow:
+            0 6px 18px rgba(0, 0, 0, 0.20);
+    }
+
+
+    /* =========================
+       MENU ABERTO
+       ========================= */
+
+    .menu-links.ativo {
+        display: flex;
+    }
+
+
+    /* =========================
+       LINKS DO MENU
+       ========================= */
+
+    .menu-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 15px;
+
+        color: #ffffff;
+
+        background-color: transparent;
+
+        font-weight: bold;
+
+        font-size: 0.95rem;
+
+        text-align: center;
+
+        text-decoration: none;
+
+        box-sizing: border-box;
+
+        border-radius: 8px;
+
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+
+    /* Hover */
+    .menu-links a:hover {
+        background-color: #ffffff;
+
+        color: #1f6b45;
+    }
+
+
+    /* Clique / toque */
+    .menu-links a:active {
+        background-color: #e9edc9;
+
+        color: #1f6b45;
+
+        transform: scale(0.98);
+    }
+
+
+    /* Acessibilidade pelo teclado */
+    .menu-links a:focus-visible,
+    .menu-toggle:focus-visible {
+        outline: 3px solid #ffffff;
+
+        outline-offset: 2px;
+    }
+
+
+    /* =========================
+       HAMBÚRGUER VIRA X
+       ========================= */
+
+    .menu-toggle.ativo span:nth-child(1) {
+        transform:
+            translateY(8px)
+            rotate(45deg);
+    }
+
+    .menu-toggle.ativo span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.ativo span:nth-child(3) {
+        transform:
+            translateY(-8px)
+            rotate(-45deg);
+    }
+
+
+    /* =========================
+       HOME / HERO
+       ========================= */
+
+    .hero {
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+        box-sizing: border-box;
+    }
+
+    .hero-content {
+        padding: 20px 10px;
+
+        box-sizing: border-box;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+
+        line-height: 1.5;
+    }
+
+    .hero-img img {
+        width: 90%;
+
+        max-width: 280px;
+    }
+
+
+    /* =========================
+       CARDS DA HOME
+       ========================= */
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        padding: 10px;
+    }
+
+    .cards .card {
+        width: 100%;
+    }
+
+
+    /* =========================
+       DICAS
+       ========================= */
+
+    .titulo-principal {
+        font-size: 2rem;
+
+        text-align: center;
+    }
+
+    .cards-container {
+        padding: 10px;
+    }
+
+    .cards-container .card {
+        width: 100%;
+    }
+
+    .caixa {
+        width: 100%;
+    }
+
+    .conteudo {
+        width: 100%;
+
+        overflow-wrap: break-word;
+
+        box-sizing: border-box;
+    }
+
+    .conteudo p,
+    .conteudo li {
+        font-size: 0.95rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       CADASTRO
+       ========================= */
+
+    .section {
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+        box-sizing: border-box;
+    }
+
+    .conteinerLoguin {
+        width: 100%;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .Titulo h1 {
+        font-size: 1.8rem;
+
+        text-align: center;
+    }
+
+    .linha {
+        flex-direction: column;
+    }
+
+    .campo {
+        width: 100%;
+    }
+
+    .campo input {
+        width: 100%;
+    }
+
+    .conteinerLoguin button {
+        width: 100%;
+    }
+
+    .termos-aceite {
+        font-size: 0.9rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       LOGIN
+       ========================= */
+
+    .conteinerLogin {
+        width: 100%;
+
+        min-height: 100vh;
+
+        padding: 15px;
+
+        box-sizing: border-box;
+    }
+
+    .conteinerLogin .card {
+        width: 100%;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .conteinerLogin input {
+        width: 100%;
+    }
+
+    .conteinerLogin .logar {
+        width: 100%;
+    }
+
+
+    /* =========================
+       RECUPERAR SENHA
+       ========================= */
+
+    .recuperar-container {
+        width: 100%;
+
+        min-height: 100vh;
+
+        padding: 15px;
+
+        box-sizing: border-box;
+    }
+
+    .recuperar-card {
+        width: 100%;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .recuperar-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .recuperar-descricao {
+        font-size: 0.95rem;
+    }
+
+    .btn-recuperar {
+        width: 100%;
+    }
+
+
+    /* =========================
+       REDEFINIR SENHA
+       ========================= */
+
+    .redefinir-container {
+        width: 100%;
+
+        min-height: 100vh;
+
+        padding: 15px;
+
+        box-sizing: border-box;
+    }
+
+    .redefinir-card {
+        width: 100%;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .redefinir-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .redefinir-descricao {
+        font-size: 0.95rem;
+    }
+
+    .btn-redefinir {
+        width: 100%;
+    }
+
+
+    /* =========================
+       TERMOS
+       ========================= */
+
+    .termos-container {
+        padding: 15px;
+    }
+
+    .termos-container .card {
+        width: 100%;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .termos-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .termos-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .termos-container p {
+        font-size: 0.95rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       COLETA
+       ========================= */
+
+    .formulario-busca {
+        padding: 10px;
+
+        box-sizing: border-box;
+    }
+
+    .campo-busca {
+        width: 100%;
+    }
+
+    .campo-busca input,
+    .campo-busca select {
+        width: 100%;
+
+        font-size: 16px;
+    }
+
+    .btn-buscar {
+        width: 100%;
+    }
+
+    .mapa-container {
+        width: calc(100% - 20px);
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .mapa-container .titulo {
+        font-size: 1.5rem;
+
+        text-align: center;
+    }
+
+    #iframe-mapa {
+        width: 100%;
+
+        height: 320px;
+    }
+
+
+    /* =========================
+       MODAL DA HOME
+       ========================= */
+
+    .modal-box {
+        width: 95%;
+
+        max-height: 85vh;
+
+        overflow-y: auto;
+    }
+
+    .modal-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .modal-body {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    /* =========================
+       HOME
+       ========================= */
+
+    .title {
+        font-size: 1.7rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .titulo-principal {
+        font-size: 1.7rem;
+    }
+
+
+    /* =========================
+       FORMULÁRIOS / CARDS
+       ========================= */
+
+    .conteinerLoguin,
+    .conteinerLogin .card,
+    .recuperar-card,
+    .redefinir-card,
+    .termos-container .card {
+        padding: 15px;
+    }
+
+
+    /* =========================
+       MENU
+       ========================= */
+
+    .menu-toggle {
+        width: 42px;
+
+        height: 42px;
+
+        margin-right: 10px;
+    }
+
+    .menu-toggle span {
+        width: 24px;
+    }
+
+    .menu-links {
+        width: calc(100% - 20px);
+
+        margin-left: 10px;
+
+        margin-right: 10px;
+    }
+
+    .menu-links a {
+        font-size: 0.9rem;
+
+        padding: 12px 10px;
+    }
+
+
+    /* =========================
+       MAPA
+       ========================= */
+
+    #iframe-mapa {
+        height: 280px;
+    }
+}

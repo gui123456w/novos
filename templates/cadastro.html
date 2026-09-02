@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar Conta</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/criarConta.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/responsivo.css') }}"
+    >
+</head>
+
+<body>
+
+<section>
+    <div class="conteinerLoguin card">
+
+        <div class="Titulo">
+            <h1>Criar conta</h1>
+        </div>
+
+        {% with mensagens = get_flashed_messages() %}
+            {% if mensagens %}
+                {% for mensagem in mensagens %}
+                    <p style="color: #b00020; font-weight: bold;">
+                        {{ mensagem }}
+                    </p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('main.cadastro') }}">
+
+            <div class="informacoa">
+
+                <div class="linha">
+
+                    <div class="campo">
+                        <h5>Nome completo</h5>
+                        <input
+                            type="text"
+                            name="nome"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <h5>Email</h5>
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="linha">
+
+                    <div class="campo">
+                        <h5>Senha</h5>
+                        <input
+                            type="password"
+                            name="senha"
+                            placeholder="Digite sua senha..."
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <h5>Confirmação</h5>
+                        <input
+                            type="password"
+                            name="confirmar_senha"
+                            placeholder="Digite sua senha novamente..."
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="linha">
+
+                    <div class="campo">
+                        <h5>CPF</h5>
+                        <input
+                            type="text"
+                            name="cpf"
+                            placeholder="Somente números"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="termos-aceite">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            name="aceitar_termos"
+                            value="1"
+                            required
+                        >
+
+                        <span>
+                            É obrigatório que você declare que leu e aceitou os
+
+                            <a
+                                href="{{ url_for('main.termos_de_uso') }}"
+                                target="_blank"
+                            >
+                                Termos e Condições de Uso
+                            </a>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <button type="submit">
+                Criar conta
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
+</body>
+</html>
